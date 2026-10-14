@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jordan Calixtro | Analista de Datos</title>
+  <style>
+    :root {
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+      --bg: #fafafa;
+      --fg: #18181b;
+      --mut: #71717a;
+      --card: #fff;
+      --bd: #e4e4e7;
+      --ac: #6366f1
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px);
+      scroll-behavior: smooth
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #09090b;
+        --fg: #fafafa;
+        --mut: #a1a1aa;
+        --card: #111114;
+        --bd: #27272a
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #09090b;
+      --fg: #fafafa;
+      --mut: #a1a1aa;
+      --card: #111114;
+      --bd: #27272a
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    #sky {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+      display: none
+    }
+
+    body.galaxy #sky {
+      display: block
+    }
+
+    body.galaxy {
+      --bg: #05050f;
+      --fg: #fafafa;
+      --mut: #b4b4c4;
+      --card: rgba(15, 15, 30, .6);
+      --bd: rgba(255, 255, 255, .14);
+      background: radial-gradient(ellipse at 20% 0%, color-mix(in srgb, var(--ac) 35%, #0b0b1e) 0%, #0b0b1e 45%, #02020a 100%) fixed
+    }
+
+    body.galaxy .card,
+    body.galaxy .chip {
+      backdrop-filter: blur(6px)
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif
+    }
+
+    a {
+      color: inherit
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    nav {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 5;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--bd)
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      height: 54px;
+      overflow-x: auto
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--mut);
+      font-size: 14px;
+      white-space: nowrap
+    }
+
+    nav a:hover {
+      color: var(--fg)
+    }
+
+    nav b {
+      margin-right: auto;
+      color: var(--fg)
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer
+    }
+
+    .btn {
+      border: 1px solid var(--bd);
+      background: var(--card);
+      color: var(--fg);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 14px
+    }
+
+    .btn.p {
+      background: var(--ac);
+      border-color: var(--ac);
+      color: #fff
+    }
+
+    section {
+      padding: 56px 0 8px
+    }
+
+    h2 {
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ac);
+      margin: 0 0 18px
+    }
+
+    .hero {
+      padding: 72px 0 24px
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 7vw, 56px);
+      line-height: 1.1;
+      margin: 0 0 10px;
+      letter-spacing: -.03em
+    }
+
+    .role {
+      font-size: 20px;
+      color: var(--mut);
+      margin: 0 0 14px
+    }
+
+    .tag {
+      max-width: 560px;
+      color: var(--mut);
+      margin: 0 0 22px
+    }
+
+    .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      margin-right: 8px
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--bd);
+      border-radius: 14px;
+      padding: 18px;
+      position: relative
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 17px
+    }
+
+    .card p {
+      margin: 0 0 10px;
+      color: var(--mut);
+      font-size: 14px
+    }
+
+    .k {
+      font-size: 12px;
+      color: var(--mut);
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .chip {
+      border: 1px solid var(--bd);
+      background: var(--card);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 14px;
+      position: relative
+    }
+
+    .chip.t {
+      color: var(--ac);
+      border-color: color-mix(in srgb, var(--ac) 40%, var(--bd))
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .links a {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid var(--bd);
+      background: var(--card);
+      padding: 8px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px
+    }
+
+    footer {
+      padding: 48px 0 90px;
+      color: var(--mut);
+      font-size: 13px;
+      text-align: center
+    }
+
+    .pic {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--ac);
+      margin-bottom: 16px;
+      display: block;
+      box-shadow: 0 0 30px color-mix(in srgb, var(--ac) 45%, transparent)
+    }
+
+    .pic.ph {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      font-weight: 700;
+      background: var(--card);
+      color: var(--ac)
+    }
+
+    /* edición */
+    .ed {
+      display: none
+    }
+
+    .editing .ed {
+      display: inline-flex
+    }
+
+    .editing [data-path] {
+      outline: 1px dashed color-mix(in srgb, var(--ac) 55%, transparent);
+      outline-offset: 3px;
+      border-radius: 4px;
+      cursor: text
+    }
+
+    .editing [data-path]:focus {
+      outline: 2px solid var(--ac);
+      background: color-mix(in srgb, var(--ac) 8%, transparent)
+    }
+
+    .x {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 0;
+      background: #ef4444;
+      color: #fff;
+      font-size: 14px;
+      line-height: 1;
+      align-items: center;
+      justify-content: center;
+      padding: 0
+    }
+
+    .chip .x {
+      top: -8px;
+      right: -8px;
+      width: 18px;
+      height: 18px;
+      font-size: 11px
+    }
+
+    .mini {
+      border: 0;
+      background: var(--ac);
+      color: #fff;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      margin-left: 4px
+    }
+
+    .add {
+      margin-top: 14px;
+      border: 1px dashed var(--ac);
+      background: transparent;
+      color: var(--ac);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 14px
+    }
+
+    #bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+      background: var(--card);
+      border-top: 1px solid var(--bd);
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      z-index: 9
+    }
+
+    #bar input[type=color] {
+      width: 34px;
+      height: 34px;
+      border: 0;
+      padding: 0;
+      background: none
+    }
+
+    #hint {
+      display: none;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: var(--mut)
+    }
+
+    .editing #hint {
+      display: block
+    }
+
+    #bar {
+      display: none
+    }
+
+    body.owner #bar {
+      display: flex
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="wrap"><b id="logo"></b><a href="#sobre">Sobre mí</a><a href="#skills">Skills</a><a
+        href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a><button class="btn" id="theme"
+        title="Cambiar tema">◐</button></div>
+  </nav>
+
+  <canvas id="sky"></canvas>
+  <main class="wrap" id="app"></main>
+
+  <div id="bar">
+    <span id="hint">Modo edición: haz clic en cualquier texto con borde punteado y escribe. Se guarda solo.</span>
+    <button class="btn" id="gx">🌌 Galaxia</button>
+    <button class="btn p" id="tog">✏️ Editar</button>
+    <label class="btn ed" title="Color de acento">🎨 <input type="color" id="col"></label>
+    <button class="btn ed" id="exp">⬇ Exportar</button>
+    <button class="btn ed" id="imp">⬆ Importar</button>
+    <button class="btn ed" id="rst">↺ Restablecer</button>
+  </div>
+  <input type="file" id="pf" accept="image/*" hidden>
+  <input type="file" id="file" accept="application/json" hidden>
+
+  <script>
+    const KEY = 'portafolio-jordan-v1';
+    const DEF = {
+      accent: '#6366f1',
+      name: 'Jordan Calixtro Quinto Joan',
+      role: 'Estudiante de Ingeniería de Sistemas · Futuro Analista de Datos',
+      tag: 'Me gusta convertir datos en decisiones. Estoy aprendiendo Python, SQL y Oracle, y buscando mi primera oportunidad de práctica.',
+      status: 'Disponible para prácticas',
+      about: 'Soy estudiante del 6.º ciclo de Ingeniería de Sistemas en la UTP, enfocado en la rama de análisis de datos. Me apasiona la programación y aprender cosas nuevas cada día. Actualmente llevo un curso online de Python y luego empezaré inglés.',
+      info: [{ k: 'Edad', v: '21 años' }, { k: 'Nacimiento', v: '10 de octubre de 2005' }, { k: 'Ubicación', v: 'Lima Chosica, Perú' }, { k: 'Teléfono', v: '926 033 840' }, { k: 'Correo', v: 'jordandixon@gmail.com' }],
+      edu: [{ t: 'Ingeniería de Sistemas', s: 'Universidad Tecnológica del Perú (UTP)', d: '6.º ciclo · Rama: Análisis de datos' }, { t: 'Curso de Python', s: 'Online (en curso)', d: 'Fundamentos y análisis de datos' }],
+      skills: ['Python', 'SQL', 'Oracle', 'Excel', 'Power BI', 'Git y GitHub', 'Pandas', 'Resolución de problemas'],
+      langs: ['Español · Nativo', 'Inglés · Básico (en progreso)'],
+      projects: [{ title: 'Proyecto 1', desc: 'Describe aquí qué hiciste y qué resolvió. Ej: análisis de ventas con Python y Pandas.', tags: 'Python, Pandas', url: 'https://github.com/' }, { title: 'Proyecto 2', desc: 'Ej: base de datos de una tienda en Oracle con consultas SQL.', tags: 'SQL, Oracle', url: 'https://github.com/' }, { title: 'Proyecto 3', desc: 'Ej: dashboard en Power BI con datos abiertos del Perú.', tags: 'Power BI, Excel', url: 'https://github.com/' }],
+      links: [{ label: 'GitHub', url: 'https://github.com/JordanDX10' }, { label: 'LinkedIn', url: 'https://linkedin.com/' }, { label: 'Instagram', url: 'https://www.instagram.com/jordan_dix10/?hl=es' }, { label: 'WhatsApp', url: 'https://wa.me/51926033840' }]
+    };
+    let S; try { S = JSON.parse(localStorage.getItem(KEY)) || null } catch (e) { S = null }
+    if (!S) S = JSON.parse(JSON.stringify(DEF));
+    const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)) } catch (e) { } };
+    const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const e = (p, t = 'span', c = '') => `<${t} data-path="${p}" class="${c}">${esc(get(p))}</${t}>`;
+    const get = p => p.split('.').reduce((o, k) => o?.[k], S);
+    const set = (p, v) => { const a = p.split('.'), l = a.pop(); a.reduce((o, k) => o[k], S)[l] = v };
+    const del = p => { const a = p.split('.'), i = +a.pop(); a.reduce((o, k) => o[k], S).splice(i, 1) };
+    const X = p => `<button class="x ed" data-del="${p}" title="Eliminar">×</button>`;
+    let editing = false;
+
+    function photo() {
+      const u = S.photo ?? 'foto.jpg';
+      const img = u ? `<img class="pic" src="${esc(u)}" alt="Foto de ${esc(S.name)}">` : `<div class="pic ph">${esc((S.name || 'J')[0])}</div>`;
+      return img + `<div class="ed" style="margin:-4px 0 14px"><button class="mini" data-photo="up">📷 Subir foto</button><button class="mini" data-photo="url">🔗 Ruta o URL</button><button class="mini" data-photo="del">Quitar</button></div>`
+    }
+    function render() {
+      document.documentElement.style.setProperty('--ac', S.accent);
+      document.getElementById('col').value = S.accent;
+      document.getElementById('logo').textContent = S.name.split(' ')[0];
+      document.title = S.name;
+      document.getElementById('app').innerHTML = `
+ <header class="hero">${photo()}
+  <p class="tag"><span class="dot"></span>${e('status')}</p>
+  ${e('name', 'h1')}
+  ${e('role', 'p', 'role')}
+  ${e('tag', 'p', 'tag')}
+  <div class="links">${S.links.slice(0, 2).map((l, i) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}<a href="#contacto">Contáctame</a></div>
+ </header>
+
+ <section id="sobre"><h2>Sobre mí</h2>
+  ${e('about', 'p')}
+  <div class="grid" style="margin-top:16px">${S.info.map((x, i) => `<div class="card">${X('info.' + i)}<div class="k">${e('info.' + i + '.k')}</div>${e('info.' + i + '.v', 'div')}</div>`).join('')}</div>
+  <button class="add ed" data-add="info">+ Añadir dato</button>
+  <h2 style="margin-top:36px">Educación</h2>
+  <div class="grid">${S.edu.map((x, i) => `<div class="card">${X('edu.' + i)}<h3>${e('edu.' + i + '.t')}</h3><p>${e('edu.' + i + '.s')}</p><div class="k">${e('edu.' + i + '.d')}</div></div>`).join('')}</div>
+  <button class="add ed" data-add="edu">+ Añadir estudio</button>
+ </section>
+
+ <section id="skills"><h2>Skills</h2>
+  <div class="chips">${S.skills.map((x, i) => `<span class="chip">${e('skills.' + i)}${X('skills.' + i)}</span>`).join('')}</div>
+  <button class="add ed" data-add="skills">+ Añadir skill</button>
+  <h2 style="margin-top:36px">Idiomas</h2>
+  <div class="chips">${S.langs.map((x, i) => `<span class="chip t">${e('langs.' + i)}${X('langs.' + i)}</span>`).join('')}</div>
+  <button class="add ed" data-add="langs">+ Añadir idioma</button>
+ </section>
+
+ <section id="proyectos"><h2>Proyectos</h2>
+  <div class="grid">${S.projects.map((x, i) => `<div class="card">${X('projects.' + i)}<h3>${e('projects.' + i + '.title')}</h3><p>${e('projects.' + i + '.desc')}</p><div class="chips" style="margin-bottom:10px"><span class="chip t">${e('projects.' + i + '.tags')}</span></div><a href="${esc(x.url)}" target="_blank" rel="noopener">Ver proyecto ↗</a><button class="mini ed" data-url="projects.${i}.url">🔗 enlace</button></div>`).join('')}</div>
+  <button class="add ed" data-add="projects">+ Añadir proyecto</button>
+ </section>
+
+ <section id="contacto"><h2>Contacto</h2>
+  <div class="links">${S.links.map((l, i) => `<span style="position:relative"><a href="${esc(l.url)}" target="_blank" rel="noopener">${e('links.' + i + '.label')}</a>${X('links.' + i)}<button class="mini ed" data-url="links.${i}.url">🔗</button></span>`).join('')}</div>
+  <button class="add ed" data-add="links">+ Añadir enlace</button>
+ </section>
+ <footer>© 2026 <span data-path="name">${esc(S.name)}</span></footer>`;
+      apply();
+    }
+    function apply() {
+      document.querySelectorAll('img.pic').forEach(i => i.onerror = () => { i.outerHTML = '<div class="pic ph">' + esc((S.name || 'J')[0]) + '</div>' });
+      document.body.classList.toggle('editing', editing);
+      document.querySelectorAll('[data-path]').forEach(n => n.contentEditable = editing ? 'plaintext-only' : 'false');
+      document.getElementById('tog').textContent = editing ? '✅ Listo' : '✏️ Editar';
+    }
+    const NEW = { info: { k: 'Dato', v: 'Valor' }, edu: { t: 'Estudio', s: 'Institución', d: 'Detalle' }, skills: 'Nueva skill', langs: 'Idioma · Nivel', projects: { title: 'Nuevo proyecto', desc: 'Describe tu proyecto.', tags: 'Tecnologías', url: 'https://' }, links: { label: 'Nuevo', url: 'https://' } };
+    document.addEventListener('input', ev => { const p = ev.target.dataset?.path; if (p) { set(p, ev.target.textContent); save() } });
+    document.addEventListener('click', ev => {
+      const t = ev.target;
+      if (editing && t.closest('a')) ev.preventDefault();
+      if (t.dataset.del) { del(t.dataset.del); save(); render() }
+      if (t.dataset.add) { const n = NEW[t.dataset.add]; S[t.dataset.add].push(typeof n === 'object' ? { ...n } : n); save(); render() }
+      if (t.dataset.url) { const p = t.dataset.url, u = prompt('Pega el enlace (URL):', get(p)); if (u !== null) { set(p, u.trim()); save(); render() } }
+    });
+    document.getElementById('tog').onclick = () => { editing = !editing; apply(); if (!editing) render() };
+    document.getElementById('col').oninput = ev => { S.accent = ev.target.value; document.documentElement.style.setProperty('--ac', S.accent); save() };
+    document.getElementById('theme').onclick = () => { const d = document.documentElement, cur = d.dataset.theme || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); d.dataset.theme = cur === 'dark' ? 'light' : 'dark' };
+    document.getElementById('exp').onclick = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(S, null, 2)], { type: 'application/json' })); a.download = 'portafolio-jordan.json'; a.click() };
+    document.getElementById('imp').onclick = () => document.getElementById('file').click();
+    document.getElementById('file').onchange = async ev => { try { S = JSON.parse(await ev.target.files[0].text()); save(); render() } catch (x) { alert('Archivo no válido') } };
+    document.getElementById('rst').onclick = () => { if (confirm('¿Volver a los datos de ejemplo?')) { S = JSON.parse(JSON.stringify(DEF)); save(); render() } };
+    const cv = document.getElementById('sky'), cx = cv.getContext('2d'); let st = [], sh = [], raf;
+    const still = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    function size() { const d = devicePixelRatio || 1; cv.width = innerWidth * d; cv.height = innerHeight * d; cx.setTransform(d, 0, 0, d, 0, 0); st = Array.from({ length: Math.min(220, Math.floor(innerWidth * innerHeight / 6000)) }, () => ({ x: Math.random() * innerWidth, y: Math.random() * innerHeight, r: Math.random() * 1.4 + .3, p: Math.random() * 6.28, s: Math.random() * .02 + .005 })) }
+    function draw() {
+      cx.clearRect(0, 0, innerWidth, innerHeight); cx.fillStyle = '#fff';
+      for (const s of st) { s.p += s.s; cx.globalAlpha = .4 + .6 * Math.abs(Math.sin(s.p)); cx.beginPath(); cx.arc(s.x, s.y, s.r, 0, 6.28); cx.fill() }
+      if (!still) {
+        if (Math.random() < .004) sh.push({ x: Math.random() * innerWidth * .7, y: Math.random() * innerHeight * .4, l: 0 });
+        sh = sh.filter(m => { m.x += 9; m.y += 4; m.l++; cx.globalAlpha = 1 - m.l / 40; cx.strokeStyle = '#fff'; cx.lineWidth = 1.5; cx.beginPath(); cx.moveTo(m.x, m.y); cx.lineTo(m.x - 60, m.y - 27); cx.stroke(); return m.l < 40 });
+        raf = requestAnimationFrame(draw)
+      }
+    }
+    function galaxy() { cancelAnimationFrame(raf); const on = S.galaxy !== false; document.body.classList.toggle('galaxy', on); document.getElementById('gx').textContent = on ? '🌌 Galaxia: ON' : '🌌 Galaxia: OFF'; if (on) { size(); draw() } }
+    addEventListener('resize', () => { if (S.galaxy !== false) galaxy() });
+    document.getElementById('gx').onclick = () => { S.galaxy = S.galaxy === false; save(); galaxy() };
+    document.addEventListener('click', ev => {
+      const a = ev.target.dataset?.photo; if (!a) return;
+      if (a === 'up') document.getElementById('pf').click();
+      if (a === 'url') { const u = prompt('Nombre del archivo (ej: foto.jpg) o link de la imagen:', S.photo ?? 'foto.jpg'); if (u !== null) { S.photo = u.trim(); save(); render() } }
+      if (a === 'del') { S.photo = ''; save(); render() }
+    });
+    document.getElementById('pf').onchange = ev => { const f = ev.target.files[0]; if (!f) return; const im = new Image(); im.onload = () => { const c = document.createElement('canvas'), m = Math.min(im.width, im.height), z = 400; c.width = c.height = z; c.getContext('2d').drawImage(im, (im.width - m) / 2, (im.height - m) / 2, m, m, 0, 0, z, z); S.photo = c.toDataURL('image/jpeg', .85); save(); render() }; im.src = URL.createObjectURL(f) };
+    /* MODO DUEÑO: la barra de edición solo aparece si abres la página con esta clave al final del link */
+    const CLAVE = '#editar-jordan';
+    try {
+      if (location.hash === CLAVE) localStorage.setItem('dueno-jordan', '1'); if (location.hash === '#salir-editor') localStorage.removeItem('dueno-jordan');
+      document.body.classList.toggle('owner', localStorage.getItem('dueno-jordan') === '1')
+    } catch (x) { }
+    render(); galaxy();
+  </script>
+</body>
+
+</html>
