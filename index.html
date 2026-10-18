@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jordan Calixtro | Analista de Datos</title>
+<meta name="description" content="Portafolio de Jordan Calixtro: estudiante de Ingeniería de Sistemas (UTP) enfocado en análisis de datos. Python, SQL, Java y Spring Boot.">
+<meta property="og:title" content="Jordan Calixtro | Analista de Datos">
+<meta property="og:image" content="foto.jpg">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fafafa;--fg:#18181b;--mut:#71717a;--card:#fff;--bd:#e4e4e7;--ac:#6366f1}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#09090b;--fg:#fafafa;--mut:#a1a1aa;--card:#111114;--bd:#27272a}}
+:root[data-theme="dark"]{--bg:#09090b;--fg:#fafafa;--mut:#a1a1aa;--card:#111114;--bd:#27272a}
+*{box-sizing:border-box}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:none}
+body.galaxy #sky{display:block}
+body.galaxy{--bg:#05050f;--fg:#fafafa;--mut:#b4b4c4;--card:rgba(15,15,30,.6);--bd:rgba(255,255,255,.14);background:radial-gradient(ellipse at 20% 0%,color-mix(in srgb,var(--ac) 35%,#0b0b1e) 0%,#0b0b1e 45%,#02020a 100%) fixed}
+body.galaxy .card,body.galaxy .chip{backdrop-filter:blur(6px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+nav .wrap{display:flex;gap:18px;align-items:center;height:54px;overflow-x:auto}
+nav a{text-decoration:none;color:var(--mut);font-size:14px;white-space:nowrap}
+nav a:hover{color:var(--fg)}
+nav b{margin-right:auto;color:var(--fg)}
+button{font:inherit;cursor:pointer}
+.btn{border:1px solid var(--bd);background:var(--card);color:var(--fg);border-radius:10px;padding:8px 14px;font-size:14px}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#fff}
+section{padding:56px 0 8px}
+h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ac);margin:0 0 18px}
+.hero{padding:64px 0 24px}
+.hero h1{font-size:clamp(34px,7vw,56px);line-height:1.1;margin:0 0 10px;letter-spacing:-.03em}
+.role{font-size:20px;color:var(--mut);margin:0 0 14px}
+.tag{max-width:560px;color:var(--mut);margin:0 0 22px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:8px}
+.pic{width:104px;height:104px;border-radius:50%;object-fit:cover;border:2px solid var(--ac);margin-bottom:16px;display:block;box-shadow:0 0 30px color-mix(in srgb,var(--ac) 45%,transparent)}
+.pic.ph{display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:700;background:var(--card);color:var(--ac)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;position:relative}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0 0 10px;color:var(--mut);font-size:14px}
+.shot{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;margin-bottom:12px;border:1px solid var(--bd)}
+.k{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--bd);background:var(--card);border-radius:999px;padding:5px 14px;font-size:14px;position:relative}
+.chip.t{color:var(--ac);border-color:color-mix(in srgb,var(--ac) 40%,var(--bd))}
+.grp{margin-bottom:18px}.grp .k{margin-bottom:8px}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.links a{display:inline-flex;gap:6px;align-items:center;border:1px solid var(--bd);background:var(--card);padding:8px 14px;border-radius:10px;text-decoration:none;font-size:14px}
+.links a.p{background:var(--ac);border-color:var(--ac);color:#fff}
+footer{padding:48px 0 90px;color:var(--mut);font-size:13px;text-align:center}
+.ed{display:none}.editing .ed{display:inline-flex}
+.editing [data-path]{outline:1px dashed color-mix(in srgb,var(--ac) 55%,transparent);outline-offset:3px;border-radius:4px;cursor:text}
+.editing [data-path]:focus{outline:2px solid var(--ac);background:color-mix(in srgb,var(--ac) 8%,transparent)}
+.x{position:absolute;top:8px;right:8px;width:24px;height:24px;border-radius:50%;border:0;background:#ef4444;color:#fff;font-size:14px;line-height:1;align-items:center;justify-content:center;padding:0}
+.chip .x{top:-8px;right:-8px;width:18px;height:18px;font-size:11px}
+.mini{border:0;background:var(--ac);color:#fff;border-radius:6px;padding:2px 8px;font-size:12px;margin-left:4px}
+.add{margin-top:10px;border:1px dashed var(--ac);background:transparent;color:var(--ac);border-radius:10px;padding:6px 12px;font-size:14px}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--bd);display:none;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;z-index:9}
+body.owner #bar{display:flex}
+#bar input[type=color]{width:34px;height:34px;border:0;padding:0;background:none}
+#hint{display:none;width:100%;text-align:center;font-size:12px;color:var(--mut)}
+.editing #hint{display:block}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<nav><div class="wrap"><b id="logo"></b><a href="#sobre">Sobre mí</a><a href="#skills">Skills</a><a href="#experiencia">Experiencia</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a><button class="btn" id="theme" title="Cambiar tema">◐</button></div></nav>
+<main class="wrap" id="app"></main>
+<div id="bar">
+ <span id="hint">Modo edición: toca cualquier texto con borde punteado y escribe. Se guarda solo en tu navegador.</span>
+ <button class="btn" id="gx">🌌 Galaxia</button>
+ <button class="btn p" id="tog">✏️ Editar</button>
+ <label class="btn ed" title="Color de acento">🎨 <input type="color" id="col"></label>
+ <button class="btn ed" id="exp">⬇ Exportar</button>
+ <button class="btn ed" id="imp">⬆ Importar</button>
+ <button class="btn ed" id="rst">↺ Restablecer</button>
+</div>
+<input type="file" id="pf" accept="image/*" hidden>
+<input type="file" id="file" accept="application/json" hidden>
+<script>
+const KEY='portafolio-jordan-v3';
+/* ====== AQUÍ ESTÁN TUS DATOS. Cambia solo lo que está entre comillas '...' ====== */
+const DEF={
+ accent:'#6366f1',
+ photo:'foto.jpg',
+ cv:'cv.pdf',
+ updated:'Octubre 2026',
+ name:'Jordan Calixtro Quinto Joan',
+ role:'Estudiante de Ingeniería de Sistemas · Futuro Analista de Datos',
+ tag:'Me gusta convertir datos en decisiones. Estoy aprendiendo Python, SQL y Oracle, y busco mi primera oportunidad de prácticas.',
+ status:'Disponible para prácticas',
+ about:'Soy estudiante del 6.º ciclo de Ingeniería de Sistemas en la UTP, enfocado en la rama de análisis de datos. Me apasiona la programación y aprender cosas nuevas cada día. Ya desarrollé un sistema completo de facturación con Java, Spring Boot y PostgreSQL, y ahora refuerzo Python y SQL para trabajar con datos.',
+ info:[{k:'Edad',v:'21 años'},{k:'Nacimiento',v:'10 de octubre de 2005'},{k:'Ubicación',v:'Lima Chosica, Perú'}],
+ edu:[{t:'Ingeniería de Sistemas',s:'Universidad Tecnológica del Perú (UTP)',d:'6.º ciclo · Rama: Análisis de datos'},{t:'Curso de Python',s:'Online (en curso)',d:'Fundamentos y análisis de datos'}],
+ skillGroups:[
+  {g:'Lenguajes',items:['Python','Java','SQL']},
+  {g:'Bases de datos',items:['Oracle','PostgreSQL']},
+  {g:'Backend y herramientas',items:['Spring Boot','Spring Data JPA','Swing','Maven','Git y GitHub','IntelliJ IDEA']},
+  {g:'Análisis de datos (en aprendizaje)',items:['Pandas','Excel','Power BI']}
+ ],
+ soft:['Aprendizaje autónomo','Trabajo en equipo','Resolución de problemas','Responsabilidad','Comunicación'],
+ exp:[{t:'Sistema de Facturación Walon',s:'Desarrollador · Proyecto académico UTP',d:'2026',x:'Diseño de la base de datos, backend con Spring Boot y JPA, interfaz Swing y patrones Singleton y Factory Method.'}],
+ learning:['Python (curso online)','SQL y Oracle','Análisis de datos','Inglés (próximo paso)'],
+ langs:['Español · Nativo','Inglés · Básico (en progreso)'],
+ projects:[{title:'Sistema de Facturación Walon (Spring Boot)',desc:'Sistema de gestión y facturación para tienda, con módulos de Clientes, Productos, Proveedores y Ventas. Backend desarrollado con Spring Boot, Spring Data JPA y PostgreSQL, aplicando patrones de diseño (Singleton, Factory Method) y arquitectura modular, con interfaz de escritorio en Swing.',tags:'Java, Spring Boot, PostgreSQL, Swing, Design Patterns',img:'',url:'https://github.com/JordanDX10/JCalixtro_ProyectoFinal'}],
+ links:[{label:'GitHub',url:'https://github.com/JordanDX10'},{label:'LinkedIn',url:'https://www.linkedin.com/in/jordan-calixtro-quinto-3242a729b/'},{label:'Correo',url:'mailto:jordandixon265@gmail.com'},{label:'WhatsApp',url:'https://wa.me/51926033840'}]
+};
+/* ====== FIN DE TUS DATOS ====== */
+let S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(x){S=null}
+S={...JSON.parse(JSON.stringify(DEF)),...(S||{})};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(x){}};
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const get=p=>p.split('.').reduce((o,k)=>o?.[k],S);
+const set=(p,v)=>{const a=p.split('.'),l=a.pop();a.reduce((o,k)=>o[k],S)[l]=v};
+const del=p=>{const a=p.split('.'),i=+a.pop();a.reduce((o,k)=>o[k],S).splice(i,1)};
+const e=(p,t='span',c='')=>`<${t} data-path="${p}" class="${c}">${esc(get(p))}</${t}>`;
+const X=p=>`<button class="x ed" data-del="${p}" title="Eliminar">×</button>`;
+const chips=(p,c='')=>get(p).map((_,i)=>`<span class="chip ${c}">${e(p+'.'+i)}${X(p+'.'+i)}</span>`).join('');
+const A=(p,t)=>`<button class="add ed" data-add="${p}">+ ${t}</button>`;
+const safe=u=>/^(https?:|mailto:|tel:|#|[\w./-]+$)/i.test(u||'')?u:'#';
+let editing=false;
+
+function photo(){const u=S.photo;
+ return (u?`<img class="pic" src="${esc(u)}" alt="Foto de ${esc(S.name)}">`:`<div class="pic ph">${esc((S.name||'J')[0])}</div>`)+
+ `<div class="ed" style="margin:-4px 0 14px"><button class="mini" data-photo="up">📷 Subir foto</button><button class="mini" data-photo="url">🔗 Ruta o URL</button><button class="mini" data-photo="del">Quitar</button></div>`}
+
+function render(){
+ document.documentElement.style.setProperty('--ac',S.accent);
+ document.getElementById('col').value=S.accent;
+ document.getElementById('logo').textContent=S.name.split(' ')[0];
+ document.title=S.name+' | Analista de Datos';
+ const L=S.links;
+ document.getElementById('app').innerHTML=`
+ <header class="hero">${photo()}
+  <p class="tag"><span class="dot"></span>${e('status')}</p>
+  ${e('name','h1')}${e('role','p','role')}${e('tag','p','tag')}
+  <div class="links">
+   ${S.cv?`<a class="p" href="${esc(safe(S.cv))}" download>⬇ Descargar CV</a><span class="ed"><button class="mini" data-url="cv">🔗 CV</button></span>`:''}
+   ${L.slice(0,2).map(l=>`<a href="${esc(safe(l.url))}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}
+   <a href="#contacto">Contáctame</a>
+  </div>
+ </header>
+
+ <section id="sobre"><h2>Sobre mí</h2>${e('about','p')}
+  <div class="grid" style="margin-top:16px">${S.info.map((x,i)=>`<div class="card">${X('info.'+i)}<div class="k">${e('info.'+i+'.k')}</div>${e('info.'+i+'.v','div')}</div>`).join('')}</div>${A('info','Añadir dato')}
+  <h2 style="margin-top:36px">Formación</h2>
+  <div class="grid">${S.edu.map((x,i)=>`<div class="card">${X('edu.'+i)}<h3>${e('edu.'+i+'.t')}</h3><p>${e('edu.'+i+'.s')}</p><div class="k">${e('edu.'+i+'.d')}</div></div>`).join('')}</div>${A('edu','Añadir estudio')}
+  <h2 style="margin-top:36px">Estoy aprendiendo</h2><div class="chips">${chips('learning','t')}</div>${A('learning','Añadir')}
+ </section>
+
+ <section id="skills"><h2>Habilidades técnicas</h2>
+  ${S.skillGroups.map((g,i)=>`<div class="grp"><div class="k">${e('skillGroups.'+i+'.g')} <span class="ed">${X('skillGroups.'+i).replace('class="x ed"','class="mini ed"').replace('×','quitar grupo')}</span></div><div class="chips">${chips('skillGroups.'+i+'.items')}</div>${A('skillGroups.'+i+'.items','skill')}</div>`).join('')}
+  ${A('skillGroups','Añadir categoría')}
+  <h2 style="margin-top:36px">Habilidades blandas</h2><div class="chips">${chips('soft')}</div>${A('soft','Añadir')}
+  <h2 style="margin-top:36px">Idiomas</h2><div class="chips">${chips('langs','t')}</div>${A('langs','Añadir idioma')}
+ </section>
+
+ <section id="experiencia"><h2>Experiencia</h2>
+  <div class="grid">${S.exp.map((x,i)=>`<div class="card">${X('exp.'+i)}<div class="k">${e('exp.'+i+'.d')}</div><h3>${e('exp.'+i+'.t')}</h3><p style="margin-bottom:6px">${e('exp.'+i+'.s')}</p><p>${e('exp.'+i+'.x')}</p></div>`).join('')}</div>${A('exp','Añadir experiencia')}
+ </section>
+
+ <section id="proyectos"><h2>Proyectos</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr))">${S.projects.map((x,i)=>`<div class="card">${X('projects.'+i)}${x.img?`<img class="shot" src="${esc(x.img)}" alt="Captura de ${esc(x.title)}">`:''}<h3>${e('projects.'+i+'.title')}</h3><p>${e('projects.'+i+'.desc')}</p><div class="chips" style="margin-bottom:10px"><span class="chip t">${e('projects.'+i+'.tags')}</span></div><a href="${esc(safe(x.url))}" target="_blank" rel="noopener">Ver código ↗</a><span class="ed"><button class="mini" data-url="projects.${i}.url">🔗 enlace</button><button class="mini" data-url="projects.${i}.img">🖼 imagen</button></span></div>`).join('')}</div>${A('projects','Añadir proyecto')}
+ </section>
+
+ <section id="contacto"><h2>Contacto</h2>
+  <div class="links">${L.map((l,i)=>`<span style="position:relative"><a href="${esc(safe(l.url))}" target="_blank" rel="noopener">${e('links.'+i+'.label')}</a>${X('links.'+i)}<button class="mini ed" data-url="links.${i}.url">🔗</button></span>`).join('')}</div>${A('links','Añadir enlace')}
+ </section>
+ <footer>© 2026 ${esc(S.name)} · Actualizado: ${e('updated')}</footer>`;
+ apply();
+}
+function apply(){
+ document.querySelectorAll('img.pic').forEach(i=>i.onerror=()=>{i.outerHTML='<div class="pic ph">'+esc((S.name||'J')[0])+'</div>'});
+ document.querySelectorAll('img.shot').forEach(i=>i.onerror=()=>i.remove());
+ document.body.classList.toggle('editing',editing);
+ document.querySelectorAll('[data-path]').forEach(n=>n.contentEditable=editing?'plaintext-only':'false');
+ document.getElementById('tog').textContent=editing?'✅ Listo':'✏️ Editar';
+}
+const NEW={info:{k:'Dato',v:'Valor'},edu:{t:'Estudio',s:'Institución',d:'Detalle'},items:'Nueva skill',skillGroups:{g:'Categoría',items:['Skill']},soft:'Habilidad',learning:'Algo nuevo',exp:{t:'Experiencia',s:'Rol · Lugar',d:'Año',x:'Qué hiciste.'},langs:'Idioma · Nivel',projects:{title:'Nuevo proyecto',desc:'Describe qué hace, qué hiciste tú y con qué.',tags:'Tecnologías',img:'',url:'https://github.com/JordanDX10'},links:{label:'Nuevo',url:'https://'}};
+document.addEventListener('input',ev=>{const p=ev.target.dataset?.path;if(p){set(p,ev.target.textContent);save()}});
+document.addEventListener('click',ev=>{
+ const t=ev.target,d=t.dataset||{};
+ if(editing&&t.closest('a'))ev.preventDefault();
+ if(d.del){del(d.del);save();render()}
+ if(d.add){const n=NEW[d.add.split('.').pop()];get(d.add).push(typeof n==='object'?JSON.parse(JSON.stringify(n)):n);save();render()}
+ if(d.url){const p=d.url,u=prompt('Pega el enlace o nombre de archivo:',get(p)||'');if(u!==null){set(p,u.trim());save();render()}}
+ if(d.photo==='up')document.getElementById('pf').click();
+ if(d.photo==='url'){const u=prompt('Nombre del archivo (ej: foto.jpg) o link:',S.photo||'foto.jpg');if(u!==null){S.photo=u.trim();save();render()}}
+ if(d.photo==='del'){S.photo='';save();render()}
+});
+document.getElementById('pf').onchange=ev=>{const f=ev.target.files[0];if(!f)return;const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),m=Math.min(im.width,im.height);c.width=c.height=400;c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,400,400);S.photo=c.toDataURL('image/jpeg',.85);save();render()};im.src=URL.createObjectURL(f)};
+document.getElementById('tog').onclick=()=>{editing=!editing;apply();if(!editing)render()};
+document.getElementById('col').oninput=ev=>{S.accent=ev.target.value;document.documentElement.style.setProperty('--ac',S.accent);save()};
+document.getElementById('theme').onclick=()=>{const d=document.documentElement,c=d.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');d.dataset.theme=c==='dark'?'light':'dark'};
+document.getElementById('exp').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S,null,2)],{type:'application/json'}));a.download='portafolio-jordan.json';a.click()};
+document.getElementById('imp').onclick=()=>document.getElementById('file').click();
+document.getElementById('file').onchange=async ev=>{try{S={...JSON.parse(JSON.stringify(DEF)),...JSON.parse(await ev.target.files[0].text())};save();render()}catch(x){alert('Archivo no válido')}};
+document.getElementById('rst').onclick=()=>{if(confirm('¿Volver a los datos del archivo?')){S=JSON.parse(JSON.stringify(DEF));save();render()}};
+/* Fondo galaxia (animación suave) */
+const cv=document.getElementById('sky'),cx=cv.getContext('2d');let st=[],sh=[],raf;
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function size(){const d=devicePixelRatio||1;cv.width=innerWidth*d;cv.height=innerHeight*d;cx.setTransform(d,0,0,d,0,0);st=Array.from({length:Math.min(220,Math.floor(innerWidth*innerHeight/6000))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.4+.3,p:Math.random()*6.28,s:Math.random()*.02+.005}))}
+function draw(){cx.clearRect(0,0,innerWidth,innerHeight);cx.fillStyle='#fff';
+ for(const s of st){s.p+=s.s;cx.globalAlpha=.4+.6*Math.abs(Math.sin(s.p));cx.beginPath();cx.arc(s.x,s.y,s.r,0,6.28);cx.fill()}
+ if(!still){if(Math.random()<.004)sh.push({x:Math.random()*innerWidth*.7,y:Math.random()*innerHeight*.4,l:0});
+ sh=sh.filter(m=>{m.x+=9;m.y+=4;m.l++;cx.globalAlpha=1-m.l/40;cx.strokeStyle='#fff';cx.lineWidth=1.5;cx.beginPath();cx.moveTo(m.x,m.y);cx.lineTo(m.x-60,m.y-27);cx.stroke();return m.l<40});
+ raf=requestAnimationFrame(draw)}}
+function galaxy(){cancelAnimationFrame(raf);const on=S.galaxy!==false;document.body.classList.toggle('galaxy',on);document.getElementById('gx').textContent=on?'🌌 Galaxia: ON':'🌌 Galaxia: OFF';if(on){size();draw()}}
+addEventListener('resize',()=>{if(S.galaxy!==false)galaxy()});
+document.getElementById('gx').onclick=()=>{S.galaxy=S.galaxy===false;save();galaxy()};
+/* Modo dueño: la barra solo aparece si abres el link con esta clave al final */
+const CLAVE='#editar-jordan';
+try{if(location.hash===CLAVE)localStorage.setItem('dueno-jordan','1');if(location.hash==='#salir-editor')localStorage.removeItem('dueno-jordan');
+ document.body.classList.toggle('owner',localStorage.getItem('dueno-jordan')==='1')}catch(x){}
+render();galaxy();
+</script>
+</body>
+</html>
